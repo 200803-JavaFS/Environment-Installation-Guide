@@ -1,11 +1,11 @@
-# ROCP I Environment Setup Guide
+# Java Full Stack Environment Setup Guide
 ---
 
 ## Purpose
 
-> This document provides a list of the required technologies for anyone who will be participating in the ROCP I program. It details why each technology is required and provides some step-by-step instructions on how to install and configure the technologies. This guide also walks you through any needed environment setup.
+> This document provides a list of the required technologies for associates in Revature's Java Full Stack batch. It details why each technology is required and provides some step-by-step instructions on how to install and configure the technologies. This guide also walks you through any needed environment setup.
 
-**NOTE**: It is VERY important that you install these technologies before training begins as we will not have much time to devote to environment setup due to the volume of content we'll cover. It is also important that you install the correct versions of the tools listed here as not all versions of the technologies we will use are guaranteed to be compatible with each other. If you choose to use a different version of one of the tools listed here, you will be responsible for debugging issues that are specific to your version.
+**NOTE**: It is VERY important that you install these technologies before training begins as we will not have much time to devote to environment setup due to the volume of content we'll cover. It is also important that you install the correct versions of the tools listed here when they are specified (as opposed the latest versions) as not all versions of the technologies we will use are guaranteed to be compatible with each other. If you choose to use a different version of one of the tools listed here, you will be responsible for debugging issues that are specific to your version.
 
 ## Required Technologies
 
@@ -15,11 +15,11 @@ The following technologies are required in order to complete this phase of the p
 - **Java SE Development Kit 8**: We will be utilizing Java 8 as our primary language for the duration of the program. This software development kit will provide the compiler and runtime environment needed to quickly and efficiently develop Java applications.
 - **Spring Tool Suite 4**: We will be using Spring Tool Suite 4 as our *integrated development environment* (IDE). Though you don't need an IDE to write code, an IDE provides several features that make rapid development (e.g. quickly writing and refactoring code) easier.
 - **Apache Maven**: Maven is a software project management and build automation tool. We will use it to manage our projects' builds as it provides dependency management and streamlines several aspects of the testing life cycle.
-- **PostgreSQL 10**: PostgreSQL is an open source relational database. We will leverage this technology in order to persist and organize data.
-- **DBeaver**: DBeaver is a free, open source universal database tool that is compatible with several external data sources, PostgreSQL included. We'll use DBeaver in order to modify our databases and persist data using a simple user interface provided to us by the tool.
-- **Apache Tomcat 8**: During this program, we will explore web development. As a result, we'll need a runtime environment for our web applications. Apache Tomcat provides a web server environment in which we can run our Java code so that we can easily and quickly deploy our web applications.
-- **Postman**: Postman is used for testing RESTful APIs. We'll use it to set up collections of tests for the RESTful APIs we design throughout the program. It can also be used to quickly test a single endpoint.
-- **Visual Studio Code (Optional)**: Visual Studio Code is a text editor that makes viewing and modifying code simple. Do not confuse this tool with an integrated development environment as it does not come equipped with all of the development tools you typically find in an IDE. This tool is optional, but it can be helpful if you are new to programming and wish to familiarize yourself with the syntax of the Java programming language. 
+- **DBeaver**: DBeaver is a free, open source universal database tool that is compatible with several external data sources. We'll use DBeaver in order to modify our databases (which will be hosted on AWS) and persist data using a simple user interface provided to us by the tool.
+- **Apache Tomcat 9**: During this program, we will explore web development. As a result, we'll need a runtime environment for our web applications. Apache Tomcat provides a web server environment in which we can run our Java code so that we can easily and quickly deploy our web applications.
+- **Visual Studio Code**: Visual Studio Code is a text editor that makes viewing and modifying code simple. Do not confuse this tool with an integrated development environment as it does not come equipped with all of the development tools you typically find in an IDE. We will be leveraging this tool for much of our front-end development. 
+- **Postman  (Optional)**: Postman is used for testing RESTful APIs. We'll use it to set up collections of tests for the RESTful APIs we design throughout the program. It can also be used to quickly test a single endpoint.
+
 
 ## Installation Methods
 
@@ -30,11 +30,11 @@ There are two provided methods of attaining and configuring all of the necessary
 
 Neither method is more "correct" than the other. You should choose the method of attaining the tools that works best for you. You may even choose to mix both methods, downloading some tools manually and others via a package manager.
 
-**NOTE**: This guide primarily is written for those on a Windows Machine. For Mac users [this guide](https://github.com/KodaZys/mac-install-guide) may be more helpful. 
+**NOTE**: This guide primarily is written for those on a Windows Machine. For Mac users [this guide](https://github.com/200803-JavaFS/mac-install-guide) may be more helpful. 
 
 ## Method 1: Installation Guide Using A Package Manager
 
-A *package manager* is a command line tool that allows you to install and manage software. You can use a package manager to install all of the software listed here.
+A *package manager* is a command line tool that allows you to install and manage software. You can use a package manager to install most of the software listed here.
 
 The package manager that we'll be using for this guide is called "Scoop". It's a command-line installer for Windows, which means that you'll have to be running Windows in order to use this tool. You'll also need PowerShell 5 (or a later version) installed.
 
@@ -76,19 +76,9 @@ Open a new terminal and run the following commands (one by one):
 
 **Note**: If you receive a warning that says that the bucket you're attempting to add already exists, you don't have to worry as this means that you already have that bucket.
 
-### Step 4: Install Git
+### Step 4: Install Java
 
-Now that you've installed Scoop and added some additional buckets for downloading software, open a new terminal and run the following command in order to install Git:
-
-    scoop install git
-
-After the installation is complete, verify that you have installed Git properly by typing the following in your terminal:
-
-    git --version
-
-### Step 5: Install Java
-
-In order to install Java, run the following command in your terminal:
+Now that you've installed Scoop and added some additional buckets for downloading software, open a new terminal and run the following command in order to install Java:
 
     scoop install ojdkbuild8-full
 
@@ -96,7 +86,7 @@ Now verify that you have installed Java properly by typing this command:
 
      java -version
 
-### Step 6: Install Spring Tool Suite 4
+### Step 5: Install Spring Tool Suite 4
 
 In order to install Spring Tool Suite 4, run this command in your terminal:
 
@@ -104,7 +94,7 @@ In order to install Spring Tool Suite 4, run this command in your terminal:
 
 If your installation was successful, you should now be able to search for "Spring Tool Suite" in your Windows search bar.
 
-### Step 7: Install Maven
+### Step 6: Install Maven
 
 In order to install Maven, run the following command in your terminal:
 
@@ -114,7 +104,7 @@ Verify that your Maven installation was successful by typing the following:
 
     mvn -version
 
-### Step 8: Install DBeaver
+### Step 7: Install DBeaver
 
 In order to install DBeaver, run the following command in your terminal:
 
@@ -122,19 +112,23 @@ In order to install DBeaver, run the following command in your terminal:
 
 You can verify that you have installed DBeaver properly by searching for "DBeaver" in your Windows search bar.
 
-### Step 9: Install Apache Tomcat
+### Step 8: Install Apache Tomcat
 
 In order to install Tomcat, run the following command in your terminal:
 
-    scoop install tomcat8
+    scoop install tomcat
 
-Verify that you have installed Tomcat properly by running the following command:
+Verify that you have installed Tomcat properly by running the following command if you are using powershell as your terminal:
 
+    echo $env:CATALINA_HOME
+    
+If you are using a different terminal and the above doesn't work try:
+    
     echo %CATALINA_HOME%
 
 If the installation was successful, the directory to which you installed Tomcat should appear in the terminal.
 
-### Step 10: Install Postman
+### Step 9: Install Postman
 
 In order to install Postman, run the following command in your terminal:
 
@@ -142,43 +136,7 @@ In order to install Postman, run the following command in your terminal:
 
 Verify that the program was installed properly by searching for "Postman" in your windows search bar.
 
-### Step 11: Install PostgreSQL
-
-In order to install PostgreSQL, we will NOT be using Scoop as we require PostgreSQL 10, a version that is not currently supported by Scoop. That said, we will manually download the PostgreSQL installer visiting the [official website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
-
-Once you've navigated to the website, you should see the following:
-
-![Postgres Download Home](./images/postgres-download.PNG)
-
-Please look at the row for **version 10.13** as we will downloading this version. Select the download link which corresponds with your system and click it.
-
-You'll then be prompted to save the file. Click "Save File".
-
-![Save Postgres Installer](./images/save-postgres.PNG)
-
-The file should now be located in your "Downloads" folder.
-
-![Postgres In Downloads Folder](./images/postgres-in-downloads.PNG)
-
-Double click the file, which should launch the installer. You might be asked if you want the application to make changes to your device. Say "yes".
-
-You'll be presented with several menus in the Setup Wizard.
-
-![Postgres Setup Wizard](./images/postgres-setup.PNG)
-
-Hit "Next" until you get to the "Select Components" menu. Here, you'll want to select and/or deselect the following and then click "Next":
-
-![Postgres Components](./images/postgres-components.PNG)
-
-Continue to hit "Next" until you reach the "Password" menu. Here you will be tasked with providing a password for the default Postgres user (which is "postgres"). The password is completely up to you. That said, DO NOT forget your password as you won't be able to login to your database as the superuser. If you have to, write your password down somewhere or use a password manager.
-
-![Postgres Password](./images/postgres-password.PNG)
-
-After you've decided on a password, hit "Next" on the remaining menus and allow time for Postgres to be installed. Once the installation is complete, you might be asked if you want to launch Stack Builder. You can say "no".
-
-PostgreSQL should now be successfully installed on your computer.
-
-### Step 12: Install Visual Studio Code (Optional)
+### Step 10: Install Visual Studio Code (Optional)
 
 In order to install Visual Studio Code, run the following command in your terminal:
 
@@ -186,17 +144,71 @@ In order to install Visual Studio Code, run the following command in your termin
 
 If the installation was successful, you should be able to search for "Visual Studio Code" in the Windows search bar.
 
+### Step 11: Install Git
+While scoop can install Git we HIGHLY recommend a manual install as it allows you to also install some ease-of-life optional features. 
+
+1. Navigate in your browser to [Git's Website](https://git-scm.com/download) and click the latest download for Windows. (For those using a different OS click the appropriate OS and look for the most recent stable release.)
+
+![](./images/Git-Download1.jpg) 
+
+2. Click yes to any security/firewall popup asking if you are sure you want to download the file. 
+
+3. The install file will begin downloading; most browsers will show the file that has just downloaded, click that file when it completes. If you do so skip to step 6. If the download is not apparent on your browser or disappears upon finishing go to step 4. 
+
+![](./images/Git-Download2.jpg)
+
+4. If you were not able to click the install exe file you just downloaded in your browser open your file explorer.
+
+![](./images/Git-File-Explore-Taskbar.jpg)
+
+5. In the window that opens click the "Downloads" folder, use the search bar in the upper right to search "git", and then double click on the Git installer exe file.
+
+![](./images/Git-Downloads-Folder.jpg)
+
+6. Click yes to any security pop-ups asking you if you want to allow the installer to make changes to your computer. 
+
+7. The install wizard will open to guide you through the process of installing Git. Read the license agreement and click "Next." 
+
+![](./images/Git-License.jpg)
+
+8. Accept the default installation path by clicking "Next."
+
+![](./images/Git-Filepath.jpg)
+
+9. Select your components. It is recommended to add a desktop icon. Leave the other boxes in their default setting. Click "Next."
+
+![](./images/Git-Components.jpg)
+
+10. Leave the rest of the set up as the default configuration clicking Next until you get to the experimental options (which you should leave unchecked) and then click Install. This will run the actual install process. 
+
+![](./images/Git-editor.jpg)
+![](./images/Git-PATH.jpg)
+![](./images/Git-HTTPS.jpg)
+![](./images/Git-Line-End-Conversion.jpg)
+![](.images/Git-MinTTY.jpg)
+![](./images/Git-Default-Pull.jpg)
+![](.images/Git-Extras.jpg)
+![](.images/Git-Experimental.jpg)
+
+11. After install you will get a a final window giving you the options to launch Git Bash and view the Readme notes. Select open Git Bash and deselect the view Readme notes. Click "Next."
+
+![](.images/Git-Finished.jpg)
+
+12. When Git Bash opens type "git --version" and hit Enter. If it return the version of Git you installed it correctly. 
+
+![](./images/Git-Version.jpg)
+
+
 ## Method 2: Manual Installation
 
 This method is compatible with all environments as it does not require any platform-specific package managers. You need only visit the official websites for each of the technologies listed and download the version of the tool that is compatible with your system.
 
-Do note, however, that setting system environment variables differs from machine to machine. This guide shows how to set environment variables on a Windows machine.
+Do note, however, that setting system environment variables differs from machine to machine. This guide shows how to set environment variables on a Windows 10 machine.
 
 The first thing you'll want to do is open your web browser of choice. This guide will use *Chrome*.
 
 **Note**: Many of the tools that you will install have different system installers that are platform dependent. It is **very** important that you download the correct installer. The following list details how you should choose the installer for a program:
 
-- If you have a 32-bit version of Windows, use the installer that is marked as the 32-bit version.
 - If you have a 64-bit version of Windows, use the installer that is marked as the 64-bit version.
 - If you have a Linux distribution (e.g. Debian, Ubuntu, Red Hat, Fedora), you should choose the installer that matches your distribution.
 - If you have a Mac, you should choose the installer that is marked as the Mac installer.
@@ -454,43 +466,7 @@ You should see your operating system listed ("Windows 10" in the above example) 
 
 ![](./images/MVN-Version.jpg)
 
-### Step 5: Install PostgreSQL 10
-
-In order to install PostgreSQL, please visit [PostgreSQL's official website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
-
-Once you've navigated to the website, you should see the following:
-
-![Postgres Download Home](./images/postgres-download.PNG)
-
-Please look at the row for **version 10.13** as we will downloading this version. Select the download link which corresponds with your system and click it.
-
-You'll then be prompted to save the file. Click "Save File".
-
-![Save Postgres Installer](./images/save-postgres.PNG)
-
-The file should now be located in your "Downloads" folder.
-
-![Postgres In Downloads Folder](./images/postgres-in-downloads.PNG)
-
-Double click the file, which should launch the installer. You might be asked if you want the application to make changes to your device. Say "yes".
-
-You'll be presented with several menus in the Setup Wizard.
-
-![Postgres Setup Wizard](./images/postgres-setup.PNG)
-
-Hit "Next" until you get to the "Select Components" menu. Here, you'll want to select and/or deselect the following and then click "Next":
-
-![Postgres Components](./images/postgres-components.PNG)
-
-Continue to hit "Next" until you reach the "Password" menu. Here you will be tasked with providing a password for the default Postgres user (which is "postgres"). The password is completely up to you. That said, DO NOT forget your password as you won't be able to login to your database as the superuser. If you have to, write your password down somewhere or use a password manager.
-
-![Postgres Password](./images/postgres-password.PNG)
-
-After you've decided on a password, hit "Next" on the remaining menus and allow time for Postgres to be installed. Once the installation is complete, you might be asked if you want to launch Stack Builder. You can say "no".
-
-PostgreSQL should now be successfully installed on your computer.
-
-### Step 6: Install DBeaver
+### Step 5: Install DBeaver
 
 In order to install DBeaver, please visit [DBeaver's official website](https://dbeaver.io/download/).
 
@@ -520,7 +496,7 @@ When you arrive at the portion of the setup which is titled "Choose Components",
 
 If your installation was successful, you should now be able to search for and find "DBeaver" using your computer's search bar.
 
-### Step 7: Install Apache Tomcat
+### Step 6: Install Apache Tomcat
 
 In order to download Tomcat, please visit [Apache Tomcat's official website](http://tomcat.apache.org/).
 
@@ -528,21 +504,13 @@ Once you've navigated to the site, you should see the following screen:
 
 ![Tomcat Home](./images/tomcat-home.PNG)
 
-Scroll down until you see the section labeled "Tomcat 8.5.56" as shown below. Click the "Download" link at the bottom of this section.
+Scroll down until you see the section labeled "Tomcat 9.x.xx" as shown below. Click the appropriate link under the "Core" section of "Binary Distributions" that matches your machine. (Generally 64-bit Windows zip.)
 
-![Tomcat 8](./images/tomcat-8.PNG)
+![Tomcat 9](./images/tomcat-9.PNG)
 
-**Note**: At the time of this tutorial, the version of Tomcat 8 was 8.5.56. In the future, this will not be the case. That said, please choose any version of Tomcat 8 that is available. In other words, Tomcat 8.x.xx is a valid choice as well.
+**Note**: Some of this tutorial will use images from a tomcat 8 installation even though we are using tomcat 9. The steps should be the same just be aware your version number will differ from those in some of the images. 
 
-After you've clicked the "Download" link, you should be taken to yet another page. Scroll down until you see the following:
-
-![Tomcat Distros](./images/tomcat-distros.PNG)
-
-Click the "zip" option under the "Core" section. It should be the first option listed. You should see the following after you've clicked the link, after which you should opt to save the file.
-
-![Save Tomcat](./images/save-tomcat.PNG)
-
-Now go into your system's "Downloads" folder. You should see a folder that is labeled "apache-tomcat-8.x.xx".
+Now go into your system's "Downloads" folder. You should see a folder that is labeled "apache-tomcat-9.x.xx".
 
 ![Tomcat Zip](./images/tomcat-zip.PNG)
 
@@ -598,7 +566,7 @@ In order to verify that your environment variable was properly set, please open 
 
 At this point, the value of the CATALINA_HOME environment variable should be displayed.
 
-### Step 8: Install Postman
+### Step 7: Install Postman
 
 In order to download Postman, please visit [Postman's official website](https://www.postman.com/downloads/).
 
@@ -620,7 +588,7 @@ Upon double clicking the executable, the installer will be launched and the prog
 
 Note that you'll likely have to sign up for an account to use the application. Please do so as signing up for an account is completely free.
 
-### Step 9: Install Visual Studio Code (Optional)
+### Step 8: Install Visual Studio Code (Optional)
 
 In order to download Visual Studio Code, please visit [Visual Studio Code's official website](https://code.visualstudio.com/download).
 
@@ -648,5 +616,4 @@ Additional Resources
 *  **Git Cheat Sheet** (This is a GitHub-provided cheat sheet for some simple Git commands.): https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
 *  **Java Docs** (The official API specification for Java 8): https://docs.oracle.com/javase/8/docs/api/
 *  **Maven Repository** (This provides a repository of dependencies which we can add to our Project Object Models.): https://mvnrepository.com/
-*  **PostgreSQL Docs** (This is PostgreSQL's official documentation.): https://www.postgresql.org/docs/
 
