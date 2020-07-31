@@ -64,7 +64,7 @@ If you run one of these commands and it fails, you'll need to first run the foll
 
 After you've run this command, you should then attempt to run one of the first two commands again.
 
-### Step 3: Configure Scoop
+### Step 2: Configure Scoop
 
 When installed, Scoop comes with a default bucket titled "main". Since some of the programs we'll install using Scoop aren't contained in this bucket, we'll add some additional buckets before we begin installing our programs.
 
@@ -76,7 +76,7 @@ Open a new terminal and run the following commands (one by one):
 
 **Note**: If you receive a warning that says that the bucket you're attempting to add already exists, you don't have to worry as this means that you already have that bucket.
 
-### Step 4: Install Java
+### Step 3: Install Java
 
 Now that you've installed Scoop and added some additional buckets for downloading software, open a new terminal and run the following command in order to install Java:
 
@@ -86,7 +86,7 @@ Now verify that you have installed Java properly by typing this command:
 
      java -version
 
-### Step 5: Install Spring Tool Suite 4
+### Step 4: Install Spring Tool Suite 4
 
 In order to install Spring Tool Suite 4, run this command in your terminal:
 
@@ -94,7 +94,7 @@ In order to install Spring Tool Suite 4, run this command in your terminal:
 
 If your installation was successful, you should now be able to search for "Spring Tool Suite" in your Windows search bar.
 
-### Step 6: Install Maven
+### Step 5: Install Maven
 
 In order to install Maven, run the following command in your terminal:
 
@@ -104,7 +104,7 @@ Verify that your Maven installation was successful by typing the following:
 
     mvn -version
 
-### Step 7: Install DBeaver
+### Step 6: Install DBeaver
 
 In order to install DBeaver, run the following command in your terminal:
 
@@ -112,7 +112,7 @@ In order to install DBeaver, run the following command in your terminal:
 
 You can verify that you have installed DBeaver properly by searching for "DBeaver" in your Windows search bar.
 
-### Step 8: Install Apache Tomcat
+### Step 7: Install Apache Tomcat
 
 In order to install Tomcat, run the following command in your terminal:
 
@@ -128,7 +128,7 @@ If you are using a different terminal and the above doesn't work try:
 
 If the installation was successful, the directory to which you installed Tomcat should appear in the terminal.
 
-### Step 9: Install Postman
+### Step 8: Install Postman
 
 In order to install Postman, run the following command in your terminal:
 
@@ -136,7 +136,7 @@ In order to install Postman, run the following command in your terminal:
 
 Verify that the program was installed properly by searching for "Postman" in your windows search bar.
 
-### Step 10: Install Visual Studio Code (Optional)
+### Step 9: Install Visual Studio Code (Optional)
 
 In order to install Visual Studio Code, run the following command in your terminal:
 
@@ -144,7 +144,7 @@ In order to install Visual Studio Code, run the following command in your termin
 
 If the installation was successful, you should be able to search for "Visual Studio Code" in the Windows search bar.
 
-### Step 11: Install Git
+### Step 10: Install Git
 While scoop can install Git we HIGHLY recommend a manual install as it allows you to also install some ease-of-life optional features. 
 
 1. Navigate in your browser to [Git's Website](https://git-scm.com/download) and click the latest download for Windows. (For those using a different OS click the appropriate OS and look for the most recent stable release.)
